@@ -1,9 +1,13 @@
 {
+  "id": "./",
   "name": "O.Z.O.R.A. 2026 Festival Planner Redesign",
   "short_name": "Ozora Preview",
-  "start_url": "./",
+  "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
+  "display_override": [
+    "standalone"
+  ],
   "background_color": "#130e24",
   "theme_color": "#130e24",
   "description": "Redesigned offline festival schedule, live sets, recommendations and personal plan.",
