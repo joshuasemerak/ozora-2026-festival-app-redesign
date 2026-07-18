@@ -1730,7 +1730,7 @@ document.addEventListener("click",ev=>{
  if(v){state.view=v.dataset.view;render();window.scrollTo({top:0,behavior:"smooth"});return}
  const hs=ev.target.closest("[data-home-stage]");if(hs){state.view="schedule";state.stage=hs.dataset.homeStage;render();window.scrollTo({top:0,behavior:"smooth"});return}
  if(s){state.stage=s.dataset.stage;render();return} if(d){state.day=d.dataset.day;render();return}
- const themeOption=ev.target.closest("[data-theme]");if(themeOption){applyTheme(themeOption.dataset.theme);renderThemes();$("#themeSheet").hidden=true;return}
+ const themeOption=ev.target.closest(".theme-option[data-theme]");if(themeOption){applyTheme(themeOption.dataset.theme);renderThemes();$("#themeSheet").hidden=true;return}
  if(ev.target=== $("#themeSheet")){$("#themeSheet").hidden=true;return}
  const card=ev.target.closest(".event");if(!card)return;const id=card.dataset.id;
  if(ev.target.closest(".fav")){mine[id]={...(mine[id]||{}),fav:!(mine[id]?.fav)};save();render()}
