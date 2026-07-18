@@ -1680,7 +1680,7 @@ function renderControls(){
  $("#layoutSwitch").innerHTML='<button class="layout-btn '+(state.layout==="list"?"active":"")+'" data-layout="list">'+t("list")+'</button><button class="layout-btn '+(state.layout==="timeline"?"active":"")+'" data-layout="timeline">'+t("timeline")+'</button>';
  $("#stageFilters").hidden=state.view==="schedule"&&state.layout==="timeline";
  $("#stageFilters").innerHTML=STAGES.map(s=>'<button class="chip stage '+(state.stage===s?'active':'')+'" data-stage="'+esc(s)+'">'+(s==="all"?t("allStages"):esc(s))+'</button>').join("");
- $("#dayFilters").innerHTML='<button class="chip '+(state.day==="all"?'active':'')+'" data-day="all">'+t("allDays")+'</button>'+dayList.map(d=>'<button class="chip '+(state.day===d?'active':'')+'" data-day="'+d+'">'+fmtDate(d).replace(/,.*/,"")+' '+d.slice(8)+'</button>').join("");
+ $("#dayFilters").innerHTML='<button class="chip '+(state.day==="all"?'active':'')+'" data-day="all">'+t("allDays")+'</button>'+dayList.map(d=>'<button class="chip '+(state.day===d?'active':'')+'" data-day="'+d+'">'+fmtDate(d)+'</button>').join("");
  $("#guide").innerHTML=state.view==="recommended"?'<details class="rating-guide" open><summary>'+t("ratingGuideTitle")+'</summary><p>'+t("ratingGuide")+'</p><div class="stage-legend"><strong>'+t("stageLegend")+':</strong>'+STAGES.slice(1).filter(s=>s!=="Ambyss").map(s=>'<span><i class="legend-dot '+STAGE_KEY[s]+'"></i>'+esc(s)+'</span>').join("")+'</div></details>':'';
  $("#search").placeholder=t("search");$("#search").value=state.q;$("#langButton").textContent=state.lang.toUpperCase();$("#pageTitle").textContent=pageTitle();
  $("#supportTitle").textContent=t("support");$("#supportText").textContent=t("supportText");$("#kofiLink").textContent=t("openKofi");
