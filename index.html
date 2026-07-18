@@ -1793,4 +1793,4 @@ $("#shareButton").addEventListener("click",()=>{$("#shareSheet").hidden=false});
 $("#nativeShare").addEventListener("click",async()=>{try{if(navigator.share)await navigator.share({title:"Ozora 2026 Festival Planner",url:SHARE_URL});else{await navigator.clipboard.writeText(SHARE_URL);$("#nativeShare").textContent="✓ "+t("share")}}catch(e){}});
 $("#langButton").addEventListener("click",()=>{state.lang=state.lang==="en"?"de":"en";render()});
 let mapZoom=1;applyTheme(theme);render();setInterval(()=>{if(state.view==="now"||state.view==="home")render()},60000);
-</script><script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("./sw.js")})}</script></body></html>
+</script><script>if("serviceWorker" in navigator){(async function(){try{const registration=await navigator.serviceWorker.register("./sw.js",{scope:"./",updateViaCache:"none"});await navigator.serviceWorker.ready;registration.update().catch(function(){})}catch(error){console.warn("Offline installation failed",error)}})()}</script></body></html>
