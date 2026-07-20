@@ -1,4 +1,4 @@
-const CACHE="ozora-2026-redesign-v16";
+const CACHE="ozora-2026-redesign-v17";
 const APP_SHELL=["./index.html","./manifest.webmanifest","./icon.svg"];
 self.addEventListener("install",event=>{
   event.waitUntil((async()=>{
