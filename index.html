@@ -4291,7 +4291,7 @@ function render(){
 }
 document.addEventListener("click",ev=>{
  const v=ev.target.closest("[data-view]"),s=ev.target.closest("[data-stage]"),d=ev.target.closest("[data-day]");
- if(v){state.view=v.dataset.view;if(state.view==="workshops"){state.program="workshop";state.stage="all"}if(["recommended","now"].includes(state.view)){state.program="music";state.stage="all"}render();window.scrollTo({top:0,behavior:"smooth"});return}
+ if(v){state.view=v.dataset.view;if(state.view==="schedule"){state.program="music";state.stage="all";state.day="all";state.q=""}if(state.view==="workshops"){state.program="workshop";state.stage="all";state.day="all";state.layout="list";state.q=""}if(state.view==="recommended"){state.program="music";state.stage="all";state.day="all";state.layout="list";state.q=""}if(state.view==="now"){state.program="music";state.stage="all"}render();window.scrollTo({top:0,behavior:"smooth"});return}
  const hs=ev.target.closest("[data-home-stage]");if(hs){state.view="schedule";state.program="music";state.stage=hs.dataset.homeStage;render();window.scrollTo({top:0,behavior:"smooth"});return}
  const openEvent=ev.target.closest("[data-open-event]");if(openEvent){const e=EVENTS.find(x=>x.id===openEvent.dataset.openEvent);state.view=e.program==="workshop"?"workshops":"schedule";state.program=e.program;state.layout="list";state.stage=e.stage;state.day=e.festivalDate;state.q=e.artist;render();window.scrollTo({top:0,behavior:"smooth"});return}
  const program=ev.target.closest("[data-program]");if(program){state.program=program.dataset.program;state.view=state.program==="workshop"?"workshops":"schedule";state.stage="all";state.day="all";state.q="";render();return}
